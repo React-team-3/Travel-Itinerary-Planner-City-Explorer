@@ -1,1 +1,3 @@
-# Travel-Itinerary-Planner-City-Explorer
+# Travel Itinerary Planner-City-Explorer
+
+TripCraft is an interactive travel planning application designed to help users organize their trips, explore destinations, and manage their travel budgets in one place. Users can create personalized trips by selecting their destinations and setting a budget, plan daily activities through an interactive calendar, and explore activity locations on an interactive map. The application also allows users to track daily expenses, monitor their spending, and compare their actual expenses against their planned budget, making travel planning easier, more organized, and more enjoyable.
