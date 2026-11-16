@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  name         String
+  email        String   @unique
+  passwordHash String
+  photoUrl     String?
+  interests        String[] @default([])
+  preferredCurrency String?
+  travelStyle      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  trips Trip[]
+  favorites Favorite[]
+  notifications Notification[]
+}
+
+model Trip {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String
+  destination String
+  startDate   DateTime
+  endDate     DateTime
+  budget      Decimal? @db.Decimal(10, 2)
+  currency    String
+  userId      String   @db.Uuid
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activities TripActivity[]
+  expenses Expense[]
+}
+
+model TripActivity {
+  id            String   @id @default(uuid()) @db.Uuid
+  title         String
+  category        String?
+  externalPlaceId String?
+  description   String?
+  location      String?
+  latitude      Float?
+  longitude     Float?
+  startTime     DateTime
+  endTime       DateTime?
+  estimatedCost Decimal? @db.Decimal(10, 2)
+  tripId        String   @db.Uuid
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  trip Trip @relation(fields: [tripId], references: [id], onDelete: Cascade)
+}
+
+model Expense {
+  id        String   @id @default(uuid()) @db.Uuid
+  title     String
+  amount    Decimal  @db.Decimal(10, 2)
+  category  String
+  date      DateTime @default(now())
+  notes     String?
+  tripId    String   @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  trip Trip @relation(fields: [tripId], references: [id], onDelete: Cascade)
+}
+
+model Favorite {
+  id              String   @id @default(uuid()) @db.Uuid
+  placeName       String
+  description     String?
+  imageUrl        String?
+  latitude        Float?
+  longitude       Float?
+  externalPlaceId String?
+  userId          String   @db.Uuid
+  createdAt       DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, externalPlaceId])
+}
+
+model Notification {
+  id        String   @id @default(uuid()) @db.Uuid
+  title     String
+  message   String
+  type      String
+  isRead    Boolean  @default(false)
+  userId    String   @db.Uuid
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+
+
+
+
+
