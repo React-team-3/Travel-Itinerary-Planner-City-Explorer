@@ -1,29 +1,13 @@
-import { useEffect, useState } from "react";
-import api from "./services/api";
-import "./App.css";
+import React from 'react'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes/AppRoutes'
+import { AuthProvider } from './context/AuthContext'
+import './App.css'
 
-function App() {
-  const [status, setStatus] = useState("Checking connection...");
-
-  useEffect(() => {
-    api
-      .get("/health/db")
-      .then((response) => {
-        setStatus(response.data.message);
-      })
-      .catch((error) => {
-        console.error("Connection error:", error);
-        setStatus("Connection failed. Check the Backend.");
-      });
-  }, []);
-
+export default function App() {
   return (
-    <div style={{ padding: "40px", textAlign: "center" }}>
-      <h1>TripCraft Connection Test</h1>
-      <p>{status}</p>
-    </div>
-  );
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  )
 }
-
-export default App;
-

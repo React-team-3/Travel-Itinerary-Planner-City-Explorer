@@ -1,0 +1,21 @@
+import React, { createContext, useContext } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage'
+
+const AuthContext = createContext(null)
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useLocalStorage('tripcraft_user', null)
+
+  const login = (userData) => setUser(userData)
+  const logout = () => setUser(null)
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+
+export function useAuth() {
+  return useContext(AuthContext)
+}
