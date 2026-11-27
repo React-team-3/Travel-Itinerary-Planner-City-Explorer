@@ -1,3 +1,270 @@
 .Notifications {
-  padding: 0;
+ margin: -1rem;
+  padding: 24px 16px;
+  min-height: calc(100vh - 120px);
+  background-color: #f8f5ef;
+}
+.content{
+  max-width: 820px;
+  margin: 0 auto;
+}
+.title {
+  margin: 0;
+  font-weight: 700;
+  color: #234037;
+}
+
+.subtitle {
+  color: #234037;
+  margin-bottom: 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(35, 64, 55, 0.08);
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-weight: 600;
+  color: var(--text-muted, #6b6b66);
+  cursor: pointer;
+}
+
+.activeTab {
+  background:#234037;
+  color: #fff;
+}
+
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.markAll {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deleteAll {
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #6b6b66);
+  cursor: pointer;
+}
+
+.deleteAll:hover {
+  color: #c85f45;
+}
+
+.list {
+  background: var(--card, #fffaf8);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(35, 64, 55, 0.08);
+  overflow: hidden;
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted, #6b6b66);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.unread {
+  background: #fff4f0;
+  border-left: 4px solid var(--primary, #e17156);
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fbe3dc;
+  color: #e17156;
+  font-size: 18px;
+}
+
+.body {
+  flex: 1;
+}
+
+.itemTitle {
+  font-weight: 700;
+}
+
+.message {
+  color: var(--text-muted, #6b6b66);
+  font-size: 14px;
+}
+
+.link {
+  color: var(--primary, #e17156);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.date {
+  font-size: 13px;
+  color: var(--text-muted, #6b6b66);
+}
+
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.markRead {
+  border: none;
+  background: transparent;
+  color: var(--secondary, #234037);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete {
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #6b6b66);
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: #c85f45;
+}
+.clickable {
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--card, #fdfaf9);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.modalIcon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fbe3dc;
+  color: #e17156;
+  font-size: 22px;
+}
+
+.modalTitle {
+  margin: 0;
+  font-weight: 700;
+}
+
+.modalDate {
+  font-size: 13px;
+  color: var(--text-muted, #6b6b66);
+  margin-bottom: 12px;
+}
+
+.modalMessage {
+  color: var(--text, #1f2a24);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modalLink {
+  background: var(--primary, #e17156);
+  color: #fff;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modalDelete,
+.modalClose {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modalDelete:hover,
+.modalClose:hover {
+  color: #e3d0ba;
+  background-color: #234037;
 }

@@ -1,3 +1,43 @@
 .Profile {
-  padding: 0;
+  min-height: 80vh;
+  padding: 24px;
+  border-radius: 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  color: #234037;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.editButton {
+  background-color: #e17156;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.logoutButton {
+  border-radius: 12px;
+  font-weight: 600;
 }

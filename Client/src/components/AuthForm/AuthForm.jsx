@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './AuthForm.module.css'
 
 export default function AuthForm() {

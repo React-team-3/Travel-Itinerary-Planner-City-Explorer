@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './PasswordInput.module.css'
 
 export default function PasswordInput() {
