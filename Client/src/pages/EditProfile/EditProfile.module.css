@@ -1,3 +1,149 @@
 .EditProfile {
-  padding: 0;
+ min-height: 80vh;
+  padding: 24px;
+  border-radius: 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.title {
+  margin: 0;
+  font-weight: 700;
+  color:#234037;
+}
+
+.subtitle {
+  color: #234037;
+  margin-bottom: 20px;
+}
+
+.card {
+  height: 100%;
+  background: var(--card, #fdfaf9);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(35, 64, 55, 0.08);
+}
+
+.cardTitle {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.card input[type='text'],
+.card input[type='email'],
+.card input[type='date'],
+.card select {
+  border-radius: 12px;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar,
+.avatarFallback {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.avatarFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #234037;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.saveButton {
+  background-color: #e17156;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 28px;
+  font-weight: 600;
+}
+
+.saveButton:hover {
+  background-color: #234037;
+}
+
+.cancelButton {
+  border-radius: 12px;
+  padding: 10px 28px;
+  font-weight: 600;
+}
+
+.logoutCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: var(--card, #fdfaf9);
+  border: none;
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 24px rgba(35, 64, 55, 0.08);
+  cursor: pointer;
+}
+
+.logoutText {
+  color: var(--text-muted, #6b6b66);
+  font-size: 14px;
+}
+.photoButtons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.changePhoto {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #e17156;
+  border-radius: 8px;
+  background: transparent;
+  color: #e17156;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.changePhoto:hover {
+  background: #e17156;
+  color: white;
+}
+
+.removePhoto {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  color: #6b6b66;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
 }
