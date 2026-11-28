@@ -1,3 +1,80 @@
-.TripCard {
-  padding: 0;
+.card {
+  display: flex;
+  background: var(--card, #fffdf7);
+  border: 1px solid var(--line, #ece6d8);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(34, 64, 47, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 64, 47, 0.1);
+}
+
+.image {
+  width: 240px;
+  min-height: 168px;
+  object-fit: cover;
+  flex: none;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 18px 20px;
+  flex: 1;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--forest, #22402f);
+}
+
+.dates {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted, #7d8579);
+}
+
+.place {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted, #7d8579);
+}
+
+.detailsButton {
+  margin-top: auto;
+  align-self: flex-end;
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: var(--coral, #e2684b);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.detailsButton:hover {
+  background: var(--coral-dark, #cf5539);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+    height: 168px;
+  }
 }

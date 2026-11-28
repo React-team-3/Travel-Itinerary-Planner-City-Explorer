@@ -1,3 +1,140 @@
-.TripDetails {
-  padding: 0;
+.page {
+  --forest: #22402f;
+  --ivory: #f7f3e9;
+  --card: #fffdf7;
+  --sage: #e3e9d9;
+  --line: #e6dfd0;
+  --coral: #e2684b;
+  --coral-dark: #cf5539;
+  --coral-soft: #fbe6df;
+  --muted: #7d8579;
+
+  min-height: 100%;
+  padding: 26px 28px 30px;
+  border-radius: 20px;
+  background: var(--ivory);
+  color: var(--forest);
 }
+
+.back {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--forest);
+}
+
+.hero {
+  margin: 12px 0 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+.heroImage {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.heroBody {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 22px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.nextSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+.nextStepsTitle {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.primaryButton {
+  background: var(--coral);
+  color: #fff;
+}
+
+.primaryButton:hover {
+  background: var(--coral-dark);
+  color: #fff;
+}
+
+.secondaryButton {
+  border: 1px solid var(--line);
+  color: var(--forest);
+}
+
+.secondaryButton:hover {
+  border-color: var(--sage);
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.notFound {
+  margin: 0;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--coral-soft);
+  color: #b6492f;
+}
+
+.loading {
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+

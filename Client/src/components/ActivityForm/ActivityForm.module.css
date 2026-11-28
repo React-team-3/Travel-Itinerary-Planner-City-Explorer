@@ -1,3 +1,89 @@
-.ActivityForm {
-  padding: 0;
+.card {
+  padding: 18px 20px;
+  background: var(--card, #fffdf7);
+  border: 1px solid var(--line, #ece6d8);
+  border-radius: 16px;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--forest, #22402f);
+}
+
+.error {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--coral-soft, #fbe6df);
+  color: #b6492f;
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--muted, #7d8579);
+}
+
+.input {
+  padding: 8px 10px;
+  border: 1px solid var(--line, #e6dfd0);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 0.9rem;
+  color: var(--forest, #22402f);
+}
+
+.input:focus {
+  outline: 2px solid var(--sage, #e3e9d9);
+  outline-offset: 1px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.saveButton {
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--coral, #e2684b);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.saveButton:hover {
+  background: var(--coral-dark, #cf5539);
+}
+
+.cancelButton {
+  padding: 8px 18px;
+  border: 1px solid var(--line, #e6dfd0);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted, #7d8579);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

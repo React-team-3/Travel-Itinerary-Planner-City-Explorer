@@ -1,3 +1,31 @@
-.TripStatus {
-  padding: 0;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.upcoming {
+  background: var(--sage, #e3e9d9);
+  color: var(--forest, #22402f);
+}
+
+.ongoing {
+  background: var(--coral-soft, #fbe6df);
+  color: var(--coral-dark, #c0553c);
+}
+
+.completed {
+  background: #eeece4;
+  color: #7d8579;
 }
