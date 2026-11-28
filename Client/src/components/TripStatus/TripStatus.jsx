@@ -1,10 +1,19 @@
 import React from 'react'
 import styles from './TripStatus.module.css'
 
-export default function TripStatus() {
+
+const statusStyle = {
+  Upcoming: styles.upcoming,
+  Ongoing: styles.ongoing,
+  Completed: styles.completed,
+}
+
+export default function TripStatus({ status }) {
   return (
-    <div className={styles.TripStatus}>
-      <h2>TripStatus</h2>
-    </div>
+    <span className={`${styles.badge} ${statusStyle[status] || styles.completed}`}>
+      <span className={styles.dot} />
+      {status}
+    </span>
   )
 }
+
